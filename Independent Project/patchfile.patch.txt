@@ -1,0 +1,19 @@
+@@ -342,6 +342,19 @@
+return retval;
+}
++SYSCALL_DEFINE4(kernel_ 2d_cpy, float **, src, float **,dest, int ,row, int , col)
++{	float var[row][col];
++if ( __copy_from_user(var,src, sizeof (float) * (row*col)))
++return -EFAULT:\;
++}
++if __copy_to_user(dest,var,sizeof (float )*(row*col)))
++{return -EFAULT:
++}
+return 0;
++}
++
++
++
+/*
+* Unprivileged users may change the real gid tò the effective gid
+* or vice versa. (BSD-style)
